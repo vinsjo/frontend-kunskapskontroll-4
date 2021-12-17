@@ -1,0 +1,81 @@
+:root {
+	--bg-color: #ffffff;
+	--bg-color-nav: rgba(255, 255, 255, 0.8);
+	--text-color: #000000;
+	--accent-color: #2327a9;
+	--box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+*:focus {
+	outline-color: var(--accent-color);
+}
+
+body {
+	background-color: var(--bg-color);
+	color: var(--text-color);
+}
+
+a {
+	color: var(--accent-color);
+	text-decoration-color: transparent;
+}
+
+a:hover {
+	text-decoration-color: var(--accent-color);
+}
+
+nav {
+	background-color: var(--bg-color-nav);
+}
+
+input,
+textarea {
+	box-shadow: var(--box-shadow);
+}
+
+label {
+	color: var(--accent-color);
+}
+
+button {
+	background-color: var(--accent-color);
+	color: var(--bg-color);
+	box-shadow: var(--box-shadow);
+}
+
+button:hover,
+button:active,
+button:focus {
+	background-color: var(--bg-color);
+	color: var(--accent-color);
+}
+
+iframe {
+	box-shadow: var(--box-shadow);
+}
+
+li::before {
+	color: var(--accent-color);
+}
+
+nav a.current {
+	text-decoration-color: var(--accent-color);
+}
+
+nav a:hover,
+.logo:hover {
+	color: var(--link-color);
+	text-decoration-color: var(--text-color);
+}
+
+.semi-transparent {
+	opacity: 0.5;
+}
+
+.icon-link svg {
+	fill: var(--text-color);
+}
+
+.icon-link:hover svg {
+	fill: var(--accent-color);
+}

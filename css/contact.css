@@ -1,0 +1,41 @@
+section {
+	max-width: 60ch;
+}
+
+button {
+	cursor: pointer;
+	transition: all 0.1s ease-out;
+}
+
+button:hover {
+	transform: scale(1.05);
+}
+
+.social h2 {
+	text-align: center;
+}
+
+.icon-container {
+	display: flex;
+	justify-content: center;
+	gap: 32px;
+	padding-top: 8px;
+}
+
+.icon-link {
+	display: inline-block;
+	position: relative;
+}
+
+.icon-link {
+	transition: var(--transition-transform);
+}
+
+.icon-link:hover {
+	transform: scale(1.1);
+}
+
+.icon {
+	height: 2rem;
+	width: auto;
+}

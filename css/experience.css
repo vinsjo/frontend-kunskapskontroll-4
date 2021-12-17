@@ -1,0 +1,90 @@
+ul {
+	padding: 1em 0;
+	list-style: none;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(25ch, 1fr));
+}
+
+li {
+	padding: 0.25em 0;
+}
+
+li::before {
+	content: "#";
+	font-weight: bold;
+	display: inline-block;
+	padding-right: 0.5em;
+}
+
+.project {
+	width: 100%;
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: 3rem auto auto;
+	grid-template-areas:
+		"title"
+		"frame"
+		"info";
+	justify-items: center;
+	gap: 24px;
+}
+
+.project:not(:last-of-type) {
+	margin-bottom: 48px;
+}
+
+.project .title {
+	grid-area: title;
+	width: 100%;
+}
+
+.project iframe {
+	grid-area: frame;
+	width: 100%;
+	height: 75vh;
+	max-height: 600px;
+	border: none;
+	border-radius: 8px;
+	align-self: start;
+}
+
+.project .info {
+	grid-area: info;
+	justify-self: start;
+	align-self: end;
+}
+
+.project .info h4 {
+	margin-top: 1em;
+}
+
+@media (min-width: 768px) {
+	.project {
+		grid-template-columns: auto auto;
+		grid-template-rows: 3rem auto;
+		grid-template-areas:
+			"frame title"
+			"frame info";
+	}
+	.project:nth-of-type(even) {
+		grid-template-areas:
+			"title frame"
+			"info frame";
+	}
+
+	.project iframe {
+		max-width: 400px;
+		height: 80vh;
+	}
+
+	.project:nth-of-type(odd) .title,
+	.project:nth-of-type(odd) .info h4 {
+		text-align: right;
+	}
+	.project:nth-of-type(odd) .info {
+		justify-self: end;
+	}
+	.project:not(:first-of-type) {
+		margin-top: 96px;
+	}
+}

@@ -1,0 +1,86 @@
+.animation-container,
+.caption-container {
+	position: fixed;
+	top: var(--body-padding);
+	bottom: var(--body-padding);
+	left: var(--body-padding);
+	right: var(--body-padding);
+	max-width: var(--max-content-width);
+	padding: 4rem 0;
+	margin: 0 auto;
+	display: flex;
+}
+
+.caption-container {
+	justify-content: center;
+	align-items: center;
+	z-index: -1;
+}
+
+.caption {
+	font-size: 1.5rem;
+	font-weight: 900;
+	text-transform: lowercase;
+	text-align: center;
+	white-space: nowrap;
+	transform: rotate(90deg);
+}
+
+.animation-container {
+	z-index: -2;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.smiley {
+	display: block;
+	position: relative;
+	height: 25%;
+	width: auto;
+	transform-origin: center;
+	animation: rotateShape 10s linear 0s infinite;
+}
+
+.smiley:nth-of-type(2) {
+	animation-direction: reverse;
+}
+
+@keyframes rotateShape {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@media (orientation: landscape) {
+	.animation-container {
+		flex-direction: row;
+	}
+
+	.smiley {
+		width: 25%;
+		height: auto;
+	}
+
+	.caption {
+		transform: rotate(0);
+	}
+}
+
+@media (orientation: portrait) and (min-height: 700px),
+	(orientation: landscape) and (min-width: 640px) {
+	.caption {
+		font-size: 2rem;
+	}
+}
+
+@media (orientation: portrait) and (min-height: 1024px),
+	(orientation: landscape) and (min-width: 1024px) {
+	.caption {
+		font-size: 3rem;
+	}
+}

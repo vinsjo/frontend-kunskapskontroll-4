@@ -1,0 +1,66 @@
+:root {
+	--body-padding: 10px;
+	--max-content-width: 64rem;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+*:focus {
+	outline-offset: 2px;
+}
+
+body {
+	width: 100%;
+	min-height: 100vh;
+	padding: var(--body-padding);
+}
+
+header {
+	width: 100%;
+	margin: 0 auto;
+	max-width: var(--max-content-width);
+}
+
+main {
+	max-width: var(--max-content-width);
+	display: flex;
+	flex-direction: column;
+	gap: 48px;
+	margin: 0 auto;
+	padding: 32px 0;
+}
+
+section {
+	width: 100%;
+	margin: 0 auto;
+}
+
+article {
+	width: 100%;
+	margin: 32px auto;
+}
+
+nav {
+	max-width: var(--max-content-width);
+	position: fixed;
+	bottom: 0;
+	left: var(--body-padding);
+	right: var(--body-padding);
+	margin: 0 auto;
+	padding-bottom: 0.25em;
+	display: flex;
+	justify-content: space-between;
+	z-index: 1;
+}
+
+nav a {
+	display: block;
+}
+
+.logo {
+	display: inline-block;
+}

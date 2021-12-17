@@ -1,0 +1,73 @@
+* {
+	line-height: 160%;
+}
+
+body {
+	font-family: "Lexend", Arial, Helvetica, sans-serif;
+}
+
+a {
+	text-decoration-thickness: 0.15em;
+}
+
+h1 {
+	font-size: 2rem;
+}
+h2 {
+	font-size: 1.5rem;
+}
+h3 {
+	font-size: 1.3rem;
+}
+h4 {
+	font-size: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-weight: 600;
+	text-transform: lowercase;
+}
+
+p {
+	margin-top: 0.5em;
+}
+
+nav {
+	font-size: 1.5rem;
+	font-weight: 600;
+	text-transform: lowercase;
+}
+
+li {
+	font-weight: 500;
+}
+
+input:not([type="submit"]),
+textarea {
+	font-family: "Miriam Libre", "Courier New", Courier, monospace;
+}
+
+label {
+	text-transform: lowercase;
+}
+
+button {
+	font-weight: 600;
+}
+
+.logo {
+	font-size: 2.25rem;
+	font-weight: 900;
+	text-decoration: none;
+	text-transform: lowercase;
+	line-height: 90%;
+}
+
+@media (min-width: 450px) {
+	.logo {
+		font-size: 3rem;
+	}
+}

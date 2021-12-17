@@ -1,0 +1,34 @@
+form {
+	margin: 0 auto;
+	display: grid;
+	grid-auto-flow: row;
+	gap: 16px;
+	padding: 16px 0;
+}
+
+label,
+input,
+textarea,
+button {
+	border: none;
+	display: block;
+	width: 100%;
+}
+
+input,
+textarea,
+button {
+	border-radius: 4px;
+	padding: 0.25em 0.5em;
+}
+
+textarea {
+	resize: vertical;
+	height: 8em;
+}
+
+button {
+	width: min(100%, 20ch);
+	min-width: fit-content;
+	justify-self: center;
+}
