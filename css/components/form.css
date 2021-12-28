@@ -27,7 +27,7 @@ textarea {
 	height: 8em;
 }
 
-button {
+form button {
 	width: min(100%, 20ch);
 	min-width: fit-content;
 	justify-self: center;

@@ -1,0 +1,71 @@
+:root {
+	--swiper-navigation-size: 2rem;
+	--swiper-pagination-bullet-size: 0.75rem;
+	--swiper-pagination-bullet-inactive-opacity: 1;
+	--swiper-pagination-bullet-opacity: 1;
+	--swiper-pagination-bullet-horizontal-gap: 0.25rem;
+}
+
+.swiper {
+	width: 600px;
+	height: 400px;
+	max-width: 100vw;
+	max-height: 100vh;
+	position: relative;
+	-webkit-touch-callout: none; /* Safari */
+	-webkit-user-select: none; /* Chrome */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none;
+}
+
+.slide-container .slide {
+	width: 100%;
+	height: 100%;
+}
+
+.slide-container .slide img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.swiper.zoom {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+}
+
+.swiper-slide img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+button.swiper-zoom {
+	position: absolute;
+	width: var(--swiper-navigation-size);
+	height: var(--swiper-navigation-size);
+	top: 10px;
+	right: 10px;
+	z-index: 10;
+	cursor: pointer;
+	transform-origin: center;
+	transition: transform 0.2s ease;
+}
+
+.swiper.zoom button.swiper-zoom {
+	transform: rotate(45deg);
+}
+
+button.zoom .icon {
+	width: 100%;
+	height: auto;
+}

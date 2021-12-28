@@ -1,19 +1,8 @@
-ul {
+article ul {
 	padding: 1em 0;
-	list-style: none;
+	gap: 0.25em;
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(25ch, 1fr));
-}
-
-li {
-	padding: 0.25em 0;
-}
-
-li::before {
-	content: "#";
-	font-weight: bold;
-	display: inline-block;
-	padding-right: 0.5em;
 }
 
 .project {
@@ -22,9 +11,9 @@ li::before {
 	grid-template-columns: auto;
 	grid-template-rows: 3rem auto auto;
 	grid-template-areas:
-		"title"
-		"frame"
-		"info";
+		'title'
+		'frame'
+		'info';
 	justify-items: center;
 	gap: 24px;
 }
@@ -63,13 +52,13 @@ li::before {
 		grid-template-columns: auto auto;
 		grid-template-rows: 3rem auto;
 		grid-template-areas:
-			"frame title"
-			"frame info";
+			'frame title'
+			'frame info';
 	}
 	.project:nth-of-type(even) {
 		grid-template-areas:
-			"title frame"
-			"info frame";
+			'title frame'
+			'info frame';
 	}
 
 	.project iframe {

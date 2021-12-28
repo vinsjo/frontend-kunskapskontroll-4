@@ -1,66 +1,93 @@
 :root {
-	--body-padding: 10px;
-	--max-content-width: 64rem;
+	--outer-padding: 1rem;
+	--max-content-width: 1024px;
 }
 
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.25);
 }
 
 *:focus {
 	outline-offset: 2px;
 }
 
+html,
 body {
-	width: 100%;
+	width: 100vw;
 	min-height: 100vh;
-	padding: var(--body-padding);
+	overflow-x: hidden;
+}
+
+body {
+	position: relative;
+	padding: var(--outer-padding);
+}
+
+header,
+main,
+footer,
+section {
+	margin: 0 auto;
 }
 
 header {
 	width: 100%;
-	margin: 0 auto;
 	max-width: var(--max-content-width);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	overflow: visible;
+	position: relative;
+	z-index: 10;
 }
 
 main {
+	position: relative;
 	max-width: var(--max-content-width);
 	display: flex;
 	flex-direction: column;
-	gap: 48px;
-	margin: 0 auto;
-	padding: 32px 0;
+	gap: 3em;
+	padding: 2em 0;
 }
 
 section {
 	width: 100%;
-	margin: 0 auto;
 }
 
 article {
 	width: 100%;
-	margin: 32px auto;
+	margin: 2em auto;
 }
 
-nav {
-	max-width: var(--max-content-width);
-	position: fixed;
-	bottom: 0;
-	left: var(--body-padding);
-	right: var(--body-padding);
-	margin: 0 auto;
-	padding-bottom: 0.25em;
-	display: flex;
-	justify-content: space-between;
-	z-index: 1;
-}
-
-nav a {
-	display: block;
+ul {
+	list-style-type: none;
 }
 
 .logo {
 	display: inline-block;
+}
+
+button.icon {
+	height: 2em;
+	width: fit-content;
+	outline: none;
+	border: none;
+	border-radius: 0;
+	cursor: pointer;
+	padding: 0;
+}
+
+button.icon svg {
+	height: 100%;
+	width: auto;
+	overflow: visible;
+}
+
+article li::before {
+	content: '#';
+	display: inline-block;
+	padding-right: 0.5em;
 }

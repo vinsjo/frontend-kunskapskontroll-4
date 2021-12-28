@@ -1,44 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800;900&family=Miriam+Libre&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/color.css">
-    <link rel="stylesheet" type="text/css" href="css/typography.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
-    <title>Vincent Sjögren</title>
+<link>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="cookie" content="SameSite=Strict">
+
+<!-- PRECONNECT: -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+
+<!-- REMOTE CSS: -->
+<link
+    href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800;900&family=Miriam+Libre&display=swap"
+    rel="stylesheet">
+
+<!-- LOCAL CSS: -->
+<link rel="stylesheet" type="text/css" href="/css/typography.css">
+<link rel="stylesheet" type="text/css" href="/css/color.css">
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="stylesheet" type="text/css" href="/css/components/nav.css">
+<link rel="stylesheet" type="text/css" href="/css/pages/index.css">
+
+<!-- REMOTE JS: -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jcanvas/21.0.1/min/jcanvas.min.js"
+    integrity="sha512-pu2L+33GBCuTrTU3mNJphG2Hm2JKlLA01280LIiz29D40f/UFOU5dEVxVuW46p+HZeZhXvQsUxtVFxPabX9S9g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- LOCAL JS: -->
+<script type="module" src="/js/main.js"></script>
+<script type="module" src="/js/bg-animation.js"></script>
+
+<title>Vincent Sjögren - Kunskapskontroll 4</title>
 </head>
 
 <body>
+
     <header>
-        <a class="logo" href="index.html" title="You are here">
+        <a class="logo" href="/" title="Home">
             Vincent Sjögren
         </a>
+        <nav>
+            <button class="icon burger">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <rect y="4" width="32" height="4" />
+                    <rect y="14" width="32" height="4" />
+                    <rect y="24" width="32" height="4" />
+                </svg>
+                Menu
+            </button>
+            <ul class="nav-links">
+                <li>
+                    <a href="/" title="Home">Home</a>
+                </li>
+                <li>
+                    <a href="/experience.html"
+                        title="My experience">Experience</a>
+                </li>
+                <li>
+                    <a href="/contact.html" title="Contact me">Contact</a>
+                </li>
+            </ul>
+        </nav>
     </header>
-    <main>
-        <div class="caption-container">
-            <h1 class="caption">Frontend Developer in development</>
-        </div>
-        <div class="animation-container">
 
-            <img class="smiley" src="assets/smiley-nofill.svg"
-                alt="Smiley Icon">
-            <img class="smiley" src="assets/smiley.svg" alt="Smiley Icon">
-            <img class="smiley" src="assets/smiley-nofill.svg"
-                alt="Smiley Icon">
-        </div>
+    <main class="animation-container">
+        <h2 class="animation-caption">Frontend Developer in development</h2>
     </main>
-    <nav>
-        <a href="experience.html" title="My experience">Experience</a>
-        <a href="contact.html" title="Contact me">Contact</a>
-    </nav>
+
+
+
 
 </body>
 

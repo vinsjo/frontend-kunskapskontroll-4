@@ -1,9 +1,20 @@
+:root {
+	--main-font: 'Lexend', Arial, Helvetica, sans-serif;
+	--input-font: 'Miriam Libre', 'Courier New', Courier, monospace;
+	--font-size-body: 1rem;
+	--font-size-h3: 1.3rem;
+	--font-size-h2: 1.5rem;
+	--font-size-h1: 2rem;
+	--font-size-logo: 2.25rem;
+}
+
 * {
 	line-height: 160%;
 }
 
 body {
-	font-family: "Lexend", Arial, Helvetica, sans-serif;
+	font-family: var(--main-font);
+	font-size: var(--font-size-body);
 }
 
 a {
@@ -11,16 +22,16 @@ a {
 }
 
 h1 {
-	font-size: 2rem;
+	font-size: var(--font-size-h1);
 }
 h2 {
-	font-size: 1.5rem;
+	font-size: var(--font-size-h2);
 }
 h3 {
-	font-size: 1.3rem;
+	font-size: var(--font-size-h3);
 }
 h4 {
-	font-size: 1rem;
+	font-size: var(--font-size-body);
 }
 
 h1,
@@ -28,46 +39,67 @@ h2,
 h3,
 h4 {
 	font-weight: 600;
-	text-transform: lowercase;
 }
 
 p {
-	margin-top: 0.5em;
+	margin-top: 1em;
 }
 
-nav {
-	font-size: 1.5rem;
-	font-weight: 600;
+.logo,
+nav,
+label,
+h1,
+h2,
+h3,
+h4 {
 	text-transform: lowercase;
+}
+
+.nav-links {
+	font-size: var(--font-size-h2);
+	font-weight: 600;
+	text-align: right;
 }
 
 li {
 	font-weight: 500;
 }
-
-input:not([type="submit"]),
-textarea {
-	font-family: "Miriam Libre", "Courier New", Courier, monospace;
+li::before {
+	font-weight: 700;
+	font-size: var(--font-size-h3);
 }
 
-label {
-	text-transform: lowercase;
+input:not([type='submit']),
+textarea {
+	font-family: var(--input-font);
 }
 
 button {
 	font-weight: 600;
 }
 
+button.icon {
+	font-size: 0;
+}
+
 .logo {
-	font-size: 2.25rem;
+	font-size: var(--font-size-logo);
 	font-weight: 900;
 	text-decoration: none;
-	text-transform: lowercase;
 	line-height: 90%;
 }
 
-@media (min-width: 450px) {
-	.logo {
-		font-size: 3rem;
+.animation-caption {
+	text-align: center;
+	font-size: var(--font-size-h1);
+	white-space: nowrap;
+}
+
+@media only screen and (min-width: 768px) {
+	:root {
+		--font-size-logo: 3rem;
+	}
+	.nav-links {
+		text-align: center;
 	}
 }

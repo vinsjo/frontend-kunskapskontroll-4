@@ -1,0 +1,84 @@
+nav {
+	height: 100%;
+	overflow: visible;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+button.icon.burger {
+	height: 100%;
+}
+
+.nav-links,
+.nav-links li {
+	opacity: 0;
+	transform: translateX(150%);
+	transition-property: transform, opacity;
+	transition-timing-function: ease-in-out;
+	transition-duration: 0s;
+}
+
+.nav-links {
+	position: absolute;
+	top: 100%;
+	right: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 2em;
+	padding: 2em var(--outer-padding);
+	transition-duration: 0.25s;
+}
+
+.nav-links li {
+	transition-duration: 0.5s;
+}
+
+.open .nav-links {
+	z-index: 10;
+	transform: translateX(var(--outer-padding));
+	opacity: 1;
+}
+
+.open .nav-links li {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+button.icon.burger rect {
+	transform-origin: center;
+	transition: transform 0.2s ease-in-out;
+}
+
+.open button.icon.burger rect:nth-child(1) {
+	transform: rotate(135deg) translateY(31.25%);
+}
+
+.open button.icon.burger rect:nth-child(2) {
+	transform: rotate(225deg);
+}
+
+.open button.icon.burger rect:nth-child(3) {
+	transform: rotate(315deg) translateY(-31.25%);
+}
+
+@media only screen and (min-width: 768px) {
+	button.icon.burger {
+		display: none;
+	}
+	.nav-links {
+		opacity: 1;
+		padding: 0;
+		gap: 1rem;
+		flex-direction: row;
+		position: initial;
+		transition: initial;
+		transform: initial;
+	}
+	.nav-links li {
+		opacity: 1;
+		transform: initial;
+		transition: initial;
+	}
+}

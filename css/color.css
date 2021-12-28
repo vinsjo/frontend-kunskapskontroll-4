@@ -1,9 +1,12 @@
 :root {
-	--bg-color: #ffffff;
+	--bg-color: white;
 	--bg-color-nav: rgba(255, 255, 255, 0.8);
 	--text-color: #000000;
 	--accent-color: #2327a9;
 	--box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+	--swiper-theme-color: white;
+	--swiper-pagination-bullet-inactive-color: rgba(255, 255, 255, 0.5);
+	--semi-transparent: 0.5;
 }
 
 *:focus {
@@ -20,12 +23,12 @@ a {
 	text-decoration-color: transparent;
 }
 
-a:hover {
-	text-decoration-color: var(--accent-color);
+header {
+	background-color: var(--bg-color);
 }
 
-nav {
-	background-color: var(--bg-color-nav);
+a:hover {
+	text-decoration-color: var(--accent-color);
 }
 
 input,
@@ -37,7 +40,7 @@ label {
 	color: var(--accent-color);
 }
 
-button {
+button:not(.icon) {
 	background-color: var(--accent-color);
 	color: var(--bg-color);
 	box-shadow: var(--box-shadow);
@@ -54,28 +57,61 @@ iframe {
 	box-shadow: var(--box-shadow);
 }
 
+button.icon,
+button.icon:hover,
+button.icon:active,
+button.icon:focus {
+	background-color: transparent;
+}
+
+label .optional {
+	opacity: var(--semi-transparent);
+}
+
 li::before {
 	color: var(--accent-color);
 }
 
-nav a.current {
-	text-decoration-color: var(--accent-color);
+.icon-link svg,
+button.icon svg {
+	fill: var(--text-color);
+}
+button.icon.swiper-zoom svg {
+	fill: var(--swiper-theme-color);
 }
 
-nav a:hover,
-.logo:hover {
-	color: var(--link-color);
-	text-decoration-color: var(--text-color);
+button.icon.burger svg {
+	fill: var(--accent-color);
 }
 
-.semi-transparent {
-	opacity: 0.5;
-}
-
-.icon-link svg {
+button.icon.burger:hover svg {
 	fill: var(--text-color);
 }
 
-.icon-link:hover svg {
+.icon-link svg:hover,
+button.icon:hover svg {
 	fill: var(--accent-color);
+}
+
+.nav-links {
+	background-color: var(--bg-color);
+}
+
+a.current {
+	text-decoration-color: var(--accent-color);
+}
+
+a:hover,
+.logo:hover {
+	color: var(--text-color);
+	text-decoration-color: var(--text-color);
+}
+
+.swiper-nav:hover {
+	color: var(--accent-color);
+}
+
+.swiper-pagination-bullet-active,
+.swiper-pagination-bullet:hover {
+	background-color: var(--accent-color);
 }
