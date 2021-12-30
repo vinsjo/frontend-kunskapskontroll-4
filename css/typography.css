@@ -46,6 +46,7 @@ p {
 }
 
 .logo,
+.project-links,
 nav,
 label,
 h1,
@@ -89,17 +90,31 @@ button.icon {
 	line-height: 90%;
 }
 
-.animation-caption {
-	text-align: center;
-	font-size: var(--font-size-h1);
-	white-space: nowrap;
+.project-links {
+	font-weight: 700;
 }
 
-@media only screen and (min-width: 768px) {
+.animation-caption {
+	text-align: center;
+	font-size: var(--font-size-h2);
+	white-space: nowrap;
+	font-weight: 900;
+}
+
+@media (min-height: 768px) and (max-width: 768px), (min-width: 768px) {
+	.animation-caption {
+		font-size: var(--font-size-h1);
+	}
+}
+
+@media (min-width: 768px) {
 	:root {
 		--font-size-logo: 3rem;
 	}
 	.nav-links {
 		text-align: center;
+	}
+	.project:nth-of-type(odd) .title {
+		text-align: right;
 	}
 }

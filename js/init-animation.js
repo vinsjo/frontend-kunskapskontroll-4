@@ -3,11 +3,6 @@ import { vertShader, fragShader } from './modules/shaders.js';
 import { preloadImages } from './modules/helpers.js';
 
 (async function () {
-	if (!$('.animation-container').length) return;
-
-	const PAUSE_ANIMATION_KEY =
-		'vsjogren-kunskapskontroll-background-animation-pause';
-
 	const dpr = 1;
 	// const dpr = window.devicePixelRatio;
 	const scene = new THREE.Scene();
@@ -32,8 +27,6 @@ import { preloadImages } from './modules/helpers.js';
 
 	camera.position.z = 2;
 
-	// const rows = 1;
-	// const cols = Math.ceil(window.screen.width / (window.screen.height / rows));
 	const rows = Math.ceil(Math.random() * 4);
 	const cols = Math.ceil(canvasRect.width / (canvasRect.height / rows));
 
@@ -98,11 +91,9 @@ import { preloadImages } from './modules/helpers.js';
 		start() {
 			isAnimating = true;
 			animate();
-			localStorage.setItem(PAUSE_ANIMATION_KEY, 0);
 		},
 		stop() {
 			isAnimating = false;
-			localStorage.setItem(PAUSE_ANIMATION_KEY, 1);
 		},
 		toggle() {
 			isAnimating ? this.stop() : this.start();
@@ -121,10 +112,7 @@ import { preloadImages } from './modules/helpers.js';
 	});
 
 	animation.start();
-
-	if (parseInt(localStorage.getItem(PAUSE_ANIMATION_KEY)) === 1) {
-		animation.stop();
-	}
+	$('.animation-caption').addClass('show');
 })();
 
 async function createImageGrid(
@@ -162,14 +150,7 @@ async function createImageGrid(
 	);
 
 	const cnv = $(`<canvas width="${width}" height="${height}"></canvas>`);
-	// cnv.drawRect({
-	// 	fillStyle: 'red',
-	// 	x: 0,
-	// 	y: 0,
-	// 	width: width,
-	// 	height: height,
-	// 	fromCenter: false,
-	// });
+
 	for (let row = 0; row < rows; row++) {
 		for (let col = 0; col < cols; col++) {
 			const img = images[Math.floor(Math.random() * images.length)];

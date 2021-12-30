@@ -7,7 +7,7 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.25);
+	/* box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.25); */
 }
 
 *:focus {
@@ -38,7 +38,7 @@ header {
 	max-width: var(--max-content-width);
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+	align-items: flex-start;
 	overflow: visible;
 	position: relative;
 	z-index: 10;
@@ -86,7 +86,7 @@ button.icon svg {
 	overflow: visible;
 }
 
-article li::before {
+main li::before {
 	content: '#';
 	display: inline-block;
 	padding-right: 0.5em;

@@ -1,11 +1,10 @@
 :root {
 	--bg-color: white;
-	--bg-color-nav: rgba(255, 255, 255, 0.8);
+	--bg-color-header: rgba(255, 255, 255, 0.8);
 	--text-color: #000000;
 	--accent-color: #2327a9;
 	--box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
 	--swiper-theme-color: white;
-	--swiper-pagination-bullet-inactive-color: rgba(255, 255, 255, 0.5);
 	--semi-transparent: 0.5;
 }
 
@@ -24,11 +23,7 @@ a {
 }
 
 header {
-	background-color: var(--bg-color);
-}
-
-a:hover {
-	text-decoration-color: var(--accent-color);
+	background-color: var(--bg-color-header);
 }
 
 input,
@@ -76,42 +71,61 @@ li::before {
 button.icon svg {
 	fill: var(--text-color);
 }
-button.icon.swiper-zoom svg {
-	fill: var(--swiper-theme-color);
-}
 
 button.icon.burger svg {
 	fill: var(--accent-color);
 }
 
-button.icon.burger:hover svg {
-	fill: var(--text-color);
-}
-
-.icon-link svg:hover,
-button.icon:hover svg {
-	fill: var(--accent-color);
+button.icon.zoom svg {
+	fill: var(--swiper-theme-color);
 }
 
 .nav-links {
-	background-color: var(--bg-color);
+	background-color: var(--bg-color-header);
 }
 
 a.current {
 	text-decoration-color: var(--accent-color);
 }
 
-a:hover,
-.logo:hover {
-	color: var(--text-color);
-	text-decoration-color: var(--text-color);
+.swiper-pagination-bullet {
+	background-color: rgba(255, 255, 255, 0.75);
+	box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.25);
 }
 
-.swiper-nav:hover {
-	color: var(--accent-color);
-}
-
-.swiper-pagination-bullet-active,
-.swiper-pagination-bullet:hover {
+.swiper-pagination-bullet-active {
 	background-color: var(--accent-color);
+}
+
+.swiper.zoom {
+	background-color: rgba(0, 0, 0, 0.75);
+}
+
+.animation-caption {
+	text-shadow: 1px 1px var(--bg-color);
+}
+
+@media (hover: hover) {
+	a:hover {
+		text-decoration-color: var(--accent-color);
+	}
+	nav a:hover,
+	.logo:hover {
+		color: var(--text-color);
+		text-decoration-color: var(--text-color);
+	}
+	button.icon.burger:hover svg {
+		fill: var(--text-color);
+	}
+
+	.icon-link svg:hover,
+	button.icon:hover svg {
+		fill: var(--accent-color);
+	}
+	.swiper-pagination-bullet:hover {
+		background-color: var(--accent-color);
+	}
+	.swiper-nav:hover {
+		color: var(--accent-color);
+	}
 }

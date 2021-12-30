@@ -7,10 +7,6 @@ button {
 	transition: all 0.1s ease-out;
 }
 
-button:hover {
-	transform: scale(1.05);
-}
-
 .social h2 {
 	text-align: center;
 }
@@ -31,11 +27,16 @@ button:hover {
 	transition: var(--transition-transform);
 }
 
-.icon-link:hover {
-	transform: scale(1.1);
-}
-
 .icon {
 	height: 2rem;
 	width: auto;
+}
+
+@media (hover: hover) {
+	button:hover {
+		transform: scale(1.05);
+	}
+	.icon-link:hover {
+		transform: scale(1.1);
+	}
 }

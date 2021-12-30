@@ -43,8 +43,11 @@ article ul {
 	align-self: end;
 }
 
-.project .info h4 {
+.project-links {
 	margin-top: 1em;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 @media (min-width: 768px) {
@@ -66,12 +69,11 @@ article ul {
 		height: 80vh;
 	}
 
-	.project:nth-of-type(odd) .title,
-	.project:nth-of-type(odd) .info h4 {
-		text-align: right;
-	}
 	.project:nth-of-type(odd) .info {
 		justify-self: end;
+	}
+	.project:nth-of-type(odd) .project-links {
+		flex-direction: row-reverse;
 	}
 	.project:not(:first-of-type) {
 		margin-top: 96px;

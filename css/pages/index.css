@@ -31,12 +31,21 @@ body {
 	transform: rotate(90deg);
 	position: relative;
 	min-width: fit-content;
-	left: 0;
-	right: 0;
 	z-index: 1;
+	padding: 0.5em;
+	border-radius: 0.5em;
+	opacity: 0;
+	transition-property: opacity, transform;
+	transition-timing-function: ease-in;
+	transition-duration: 0.5s;
+	transition-delay: 0.5s;
 }
 
-@media only screen and (min-width: 768px) {
+.animation-caption.show {
+	opacity: 1;
+}
+
+@media (min-width: 768px) {
 	.animation-caption {
 		transform: rotate(0);
 	}

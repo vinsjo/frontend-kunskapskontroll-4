@@ -39,6 +39,7 @@ button.icon.burger {
 	z-index: 10;
 	transform: translateX(var(--outer-padding));
 	opacity: 1;
+	min-height: 50vh;
 }
 
 .open .nav-links li {
@@ -52,19 +53,22 @@ button.icon.burger rect {
 }
 
 .open button.icon.burger rect:nth-child(1) {
-	transform: rotate(135deg) translateY(31.25%);
+	transform: rotate(-135deg) translateY(31.25%);
 }
 
 .open button.icon.burger rect:nth-child(2) {
-	transform: rotate(225deg);
+	transform: rotate(-135deg);
 }
 
 .open button.icon.burger rect:nth-child(3) {
-	transform: rotate(315deg) translateY(-31.25%);
+	transform: rotate(135deg) translateY(-31.25%);
 }
 
 @media only screen and (min-width: 768px) {
 	button.icon.burger {
+		display: none;
+	}
+	.nav-links li:first-child {
 		display: none;
 	}
 	.nav-links {
