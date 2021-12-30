@@ -6,8 +6,8 @@ import { preloadImages } from './modules/helpers.js';
 	setTimeout(() => {
 		$('.animation-caption').addClass('show');
 	}, 1000);
-	const dpr = 1;
-	// const dpr = window.devicePixelRatio;
+	// const dpr = 1;
+	const dpr = window.devicePixelRatio;
 	const scene = new THREE.Scene();
 	const renderer = new THREE.WebGLRenderer({
 		alpha: true,
