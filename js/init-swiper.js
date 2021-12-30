@@ -15,7 +15,7 @@ const swiper = new Swiper('.swiper', {
 	},
 });
 
-$('.swiper button.zoom').on('click tap', function () {
+$('.swiper button.zoom').on('click touchstart', function () {
 	$('.swiper').toggleClass('zoom');
 });
 
