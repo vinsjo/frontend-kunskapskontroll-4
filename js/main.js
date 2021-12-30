@@ -1,11 +1,15 @@
+import { handleClickTouch } from './modules/helpers.js';
+
 const currentPage = location.pathname.split('/').at(-1) || 'index.html';
 $(`header a[href="${currentPage}"]`)
 	.addClass('current')
 	.attr('title', 'You are here');
 
-$('button.icon.burger').on('click touchstart', function () {
-	$('nav').toggleClass('open');
-});
+// $('button.icon.burger').on('click', function () {
+// 	$('nav').toggleClass('open');
+// });
+
+handleClickTouch('button.icon.burger', () => $('nav').toggleClass('open'));
 
 /**
  * "Closes" burger-menu when window is resized to more than 720px in width,

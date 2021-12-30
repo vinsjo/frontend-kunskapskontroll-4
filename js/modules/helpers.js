@@ -20,4 +20,28 @@ async function preloadImages(urls) {
 	return output;
 }
 
-export { preloadImages };
+/**
+ * Bind click handler and "touch-tap"
+ *
+ * @param {String} elementQuery
+ * @param {Function} handlerCallback
+ */
+function handleClickTouch(elementQuery, handlerCallback) {
+	let touchDown = false,
+		touchMove = false,
+		timeOut = Date.now();
+	const el = $(elementQuery);
+	el.on('click', function (ev) {
+		if (Date.now() - timeOut < 30) return;
+		timeOut = Date.now();
+		handlerCallback(ev);
+	});
+	el.on('touchstart', () => (touchDown = true));
+	el.on('touchmove', () => (touchMove = touchDown));
+	el.on('touchend', () => {
+		if (touchDown && !touchMove) el.trigger('click');
+		touchDown = touchMove = false;
+	});
+}
+
+export { preloadImages, handleClickTouch };
