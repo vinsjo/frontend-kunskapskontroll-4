@@ -94,6 +94,10 @@ import { preloadImages } from './modules/helpers.js';
 		renderer.setSize(canvasRect.width, canvasRect.height, false);
 	});
 
+	$(window).on('orientationchange', () => {
+		$(window).trigger('resize');
+	});
+
 	const animation = {
 		start() {
 			isAnimating = true;

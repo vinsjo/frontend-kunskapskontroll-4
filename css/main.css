@@ -36,6 +36,8 @@ section {
 header {
 	width: 100%;
 	max-width: var(--max-content-width);
+	margin-top: calc(var(--outer-padding) * -1);
+	padding-top: var(--outer-padding);
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;

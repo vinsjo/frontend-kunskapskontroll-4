@@ -15,7 +15,7 @@ const swiper = new Swiper('.swiper', {
 	},
 });
 
-$('.swiper button.zoom').on('pointerdown', function () {
+$('.swiper button.zoom').on('click', function () {
 	$('.swiper').toggleClass('zoom');
 });
 
@@ -26,5 +26,5 @@ $('.swiper').on('dblclick', function (ev) {
 	) {
 		return;
 	}
-	$('.swiper button.zoom').trigger('pointerdown');
+	$('.swiper button.zoom').trigger('click');
 });
