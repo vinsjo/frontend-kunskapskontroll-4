@@ -31,7 +31,7 @@ import { preloadImages } from './modules/helpers.js';
 	const cols = Math.ceil(canvasRect.width / (canvasRect.height / rows));
 
 	const textureImage = await createImageGrid(
-		['../assets/icons/smiley.svg', '../assets/icons/smiley-nofill.svg'],
+		['assets/icons/smiley.svg', 'assets/icons/smiley-nofill.svg'],
 		rows,
 		cols,
 		canvasRect.width * dpr,
