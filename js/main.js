@@ -1,7 +1,4 @@
-const path = location.pathname;
-const currentPage = path.substring(path.lastIndexOf('/'), path.length);
-
-$(`.nav-links a[href="${currentPage}"]`)
+$(`header a[href="${location.href.replace(location.origin, '')}"]`)
 	.addClass('current')
 	.attr('title', 'You are here');
 
