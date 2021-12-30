@@ -67,7 +67,7 @@ li::before {
 	color: var(--accent-color);
 }
 
-.icon-link svg,
+a.icon svg,
 button.icon svg {
 	fill: var(--text-color);
 }
@@ -118,7 +118,7 @@ a.current {
 		fill: var(--text-color);
 	}
 
-	.icon-link svg:hover,
+	a.icon:hover svg,
 	button.icon:hover svg {
 		fill: var(--accent-color);
 	}

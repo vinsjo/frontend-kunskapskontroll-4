@@ -66,21 +66,38 @@ ul {
 	list-style-type: none;
 }
 
+button:not(:disabled) {
+	cursor: pointer;
+}
+
 .logo {
 	display: inline-block;
 }
 
-button.icon {
+.logo,
+a,
+button,
+.icon svg {
+	transition: all 0.15s ease;
+}
+
+button.icon,
+a.icon {
 	height: 2em;
 	width: fit-content;
+	display: inline-block;
+	position: relative;
+}
+
+button.icon {
 	outline: none;
 	border: none;
 	border-radius: 0;
-	cursor: pointer;
 	padding: 0;
 }
 
-button.icon svg {
+button.icon svg,
+a.icon svg {
 	height: 100%;
 	width: auto;
 	overflow: visible;
