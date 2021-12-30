@@ -1,6 +1,4 @@
-const currentPage =
-	location.pathname.substring(1, location.pathname.length) || 'index.html';
-
+const currentPage = location.pathname.split('/').at(-1) || 'index.html';
 $(`header a[href="${currentPage}"]`)
 	.addClass('current')
 	.attr('title', 'You are here');
