@@ -1,4 +1,7 @@
-$(`header a[href="${location.href.replace(location.origin, '')}"]`)
+const currentPage =
+	location.pathname.substring(1, location.pathname.length) || 'index.html';
+
+$(`header a[href="${currentPage}"]`)
 	.addClass('current')
 	.attr('title', 'You are here');
 
