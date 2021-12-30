@@ -3,6 +3,9 @@ import { vertShader, fragShader } from './modules/shaders.js';
 import { preloadImages } from './modules/helpers.js';
 
 (async function () {
+	setTimeout(() => {
+		$('.animation-caption').addClass('show');
+	}, 1000);
 	const dpr = 1;
 	// const dpr = window.devicePixelRatio;
 	const scene = new THREE.Scene();
@@ -29,7 +32,6 @@ import { preloadImages } from './modules/helpers.js';
 
 	const rows = Math.ceil(Math.random() * 4);
 	const cols = Math.ceil(canvasRect.width / (canvasRect.height / rows));
-
 	const textureImage = await createImageGrid(
 		['assets/icons/smiley.svg', 'assets/icons/smiley-nofill.svg'],
 		rows,
@@ -39,6 +41,11 @@ import { preloadImages } from './modules/helpers.js';
 		0.25,
 		0.25
 	);
+	if (!textureImage) {
+		console.error('Failed creating texture for three.js animation');
+		return;
+	}
+
 	const mesh = new THREE.Mesh(
 		new THREE.PlaneGeometry(canvasRect.width / canvasRect.height, 1),
 		new THREE.ShaderMaterial({
@@ -112,7 +119,6 @@ import { preloadImages } from './modules/helpers.js';
 	});
 
 	animation.start();
-	$('.animation-caption').addClass('show');
 })();
 
 async function createImageGrid(
@@ -125,6 +131,7 @@ async function createImageGrid(
 	outerPaddingRatio = 0.1
 ) {
 	const images = await preloadImages(imageURLs);
+	if (!images.length) return false;
 
 	const imgSize = {
 		width: Math.max(...images.map(img => img.naturalWidth)),
