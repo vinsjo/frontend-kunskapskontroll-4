@@ -15,7 +15,8 @@ const swiper = new Swiper('.swiper', {
 	},
 });
 
-$('.swiper button.zoom').on('click', function () {
+$('.swiper button.zoom').on('click', function (ev) {
+	$('.animation-caption').text(ev.type);
 	$('.swiper').toggleClass('zoom');
 });
 
