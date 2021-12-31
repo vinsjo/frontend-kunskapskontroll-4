@@ -1,5 +1,4 @@
 import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.js';
-import { handleClickTouch } from './modules/helpers.js';
 
 const swiper = new Swiper('.swiper', {
 	loop: true,
@@ -16,7 +15,9 @@ const swiper = new Swiper('.swiper', {
 	},
 });
 
-handleClickTouch('.swiper button.zoom', () => $('.swiper').toggleClass('zoom'));
+$('.swiper button.zoom').on('click', function () {
+	$('.swiper').toggleClass('zoom');
+});
 
 $('.swiper').on('dblclick', function (ev) {
 	if (

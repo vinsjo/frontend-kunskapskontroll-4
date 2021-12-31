@@ -35,6 +35,14 @@
 <script type="module" src="js/main.js"></script>
 <script type="module" src="js/init-animation.js"></script>
 
+<script>
+    [...$("script")].forEach(el => {
+        const src = $(el).attr("src");
+        if (!src || src.includes("http")) return;
+        $(el).attr("src", `${src}?${Date.now()}`);
+    });
+</script>
+
 <title>Vincent Sjögren - Kunskapskontroll 4</title>
 </head>
 
