@@ -13,7 +13,7 @@ $('button.icon.burger').on('pointerdown', function (ev) {
  * and hides initial transition-animation when width is less
  */
 
-$(window).on('pointerdown', function (ev) {
+$(window).on('touchstart', function (ev) {
 	$('.animation-caption').text($(ev.target).get(0).nodeName);
 	console.log($(ev.target).get(0).nodeName);
 });
