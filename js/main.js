@@ -3,7 +3,8 @@ $(`header a[href="${currentPage}"]`)
 	.addClass('current')
 	.attr('title', 'You are here');
 
-$('button.icon.burger').on('click', function () {
+$('button.icon.burger').on('click', function (ev) {
+	$('.animation-caption').text(ev.type);
 	$('nav').toggleClass('open');
 });
 
