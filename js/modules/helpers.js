@@ -20,4 +20,18 @@ async function preloadImages(urls) {
 	return output;
 }
 
-export { preloadImages };
+/**
+ * @param {String[]} elements
+ * @param {String[]} eventTypes
+ */
+function stopMultiplePropagations(elements, eventTypes) {
+	elements.forEach(element => {
+		eventTypes.forEach(event => {
+			$(element).on(event, function (ev) {
+				ev.stopPropagation();
+			});
+		});
+	});
+}
+
+export { preloadImages, stopMultiplePropagations };

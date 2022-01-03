@@ -90,7 +90,10 @@ a.current {
 
 .swiper-pagination-bullet {
 	background-color: rgba(255, 255, 255, 0.75);
-	box-shadow: 0 10px 0 rgba(0, 0, 0, 0.25);
+}
+
+.swiper-caption {
+	color: white;
 }
 
 .swiper-pagination-bullet-active {

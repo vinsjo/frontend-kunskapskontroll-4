@@ -5,7 +5,7 @@
 	--swiper-pagination-bullet-opacity: 1;
 	--swiper-pagination-bullet-horizontal-gap: 0.25rem;
 	--swiper-width: 100%;
-	--swiper-height: 400px;
+	--swiper-height: 50vh;
 }
 
 .swiper {

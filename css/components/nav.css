@@ -1,55 +1,62 @@
+:root {
+	--burger-transition-duration: 0.2s;
+}
+
 nav {
-	height: 100%;
+	height: auto;
 	overflow: visible;
 	position: relative;
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-end;
 }
 
 button.icon.burger {
-	height: 100%;
-}
-
-.nav-links,
-.nav-links li {
-	opacity: 0;
-	transform: translateX(150%);
-	transition-property: transform, opacity;
-	transition-timing-function: ease-in-out;
-	transition-duration: 0s;
-}
-
-.nav-links {
-	position: absolute;
-	top: 100%;
-	right: 0;
-	display: flex;
-	flex-direction: column;
-	padding: 2em var(--outer-padding);
-	gap: 2em;
-	transition-duration: 0.25s;
-}
-
-.nav-links li {
-	transition-duration: 0.5s;
-}
-
-.open .nav-links {
-	z-index: 10;
-	transform: translateX(var(--outer-padding));
-	opacity: 1;
-	height: auto;
-}
-
-.open .nav-links li {
-	opacity: 1;
-	transform: translateX(0);
+	height: var(--font-size-logo);
 }
 
 button.icon.burger rect {
 	transform-origin: center;
-	transition: transform 0.2s ease-in-out;
+}
+
+.nav-links,
+.nav-links li {
+	transform: translateX(150%);
+}
+
+.nav-links,
+.nav-links li,
+button.icon.burger rect {
+	transition-timing-function: ease-in-out;
+	transition-property: transform;
+	transition-duration: var(--burger-transition-duration);
+}
+
+.nav-links {
+	z-index: 10;
+	position: absolute;
+	top: max(100%, calc(var(--min-header-height) - var(--outer-padding)));
+	right: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-end;
+	padding: 2em var(--outer-padding);
+	gap: 2em;
+}
+
+.nav-links li {
+	opacity: 0;
+	transition-property: transform, opacity;
+	transition-delay: var(--burger-transition-duration);
+}
+
+.open .nav-links {
+	transform: translateX(var(--outer-padding));
+}
+.open .nav-links li {
+	opacity: 1;
+	transform: translateX(0);
 }
 
 .open button.icon.burger rect:nth-child(1) {
@@ -64,21 +71,21 @@ button.icon.burger rect {
 	transform: rotate(135deg) translateY(-31.25%);
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 640px) {
 	button.icon.burger {
 		display: none;
 	}
-	.nav-links li:first-child {
-		display: none;
-	}
 	.nav-links {
-		opacity: 1;
 		padding: 0;
 		gap: 1rem;
 		flex-direction: row;
 		position: initial;
 		transition: initial;
 		transform: initial;
+	}
+
+	.nav-links li:first-child {
+		display: none;
 	}
 	.nav-links li {
 		opacity: 1;

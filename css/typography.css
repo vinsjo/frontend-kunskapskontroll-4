@@ -56,18 +56,19 @@ h4 {
 	text-transform: lowercase;
 }
 
-.nav-links {
-	font-size: var(--font-size-h2);
-	font-weight: 600;
-	text-align: right;
-}
-
 li {
 	font-weight: 500;
 }
 li::before {
 	font-weight: 700;
 	font-size: var(--font-size-h3);
+}
+
+.nav-links li {
+	font-size: var(--font-size-h2);
+	font-weight: 600;
+	text-align: right;
+	line-height: 100%;
 }
 
 input:not([type='submit']),
@@ -87,7 +88,7 @@ button.icon {
 	font-size: var(--font-size-logo);
 	font-weight: 900;
 	text-decoration: none;
-	line-height: 90%;
+	line-height: 100%;
 }
 
 .project-links {
@@ -100,12 +101,6 @@ button.icon {
 	white-space: nowrap;
 	font-weight: 900;
 }
-
-/* @media (min-height: 768px) and (max-width: 768px), (min-width: 768px) {
-	.animation-caption {
-		font-size: var(--font-size-h1);
-	}
-} */
 
 @media (min-width: 768px) {
 	:root {

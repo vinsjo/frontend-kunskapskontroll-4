@@ -8,6 +8,7 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	/* box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.2); */
 }
 
 *:focus {
@@ -34,15 +35,13 @@ section {
 }
 
 header {
-	width: 100%;
 	max-width: var(--max-content-width);
 	min-height: var(--min-header-height);
-	/* max-height: var(--max-header-height); */
 	margin-top: calc(var(--outer-padding) * -1);
 	padding-top: var(--outer-padding);
 	display: flex;
 	justify-content: space-between;
-	align-items: flex-start;
+	align-items: center;
 	overflow: visible;
 	position: relative;
 	z-index: 10;
@@ -75,7 +74,6 @@ button:not(:disabled) {
 }
 
 .logo {
-	display: inline-block;
 	position: relative;
 	z-index: 20;
 }

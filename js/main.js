@@ -7,16 +7,16 @@ $(`header a[href="${currentPage}"]`)
 	.attr('title', 'You are here');
 
 // Add event listener to burger-icon to toggle burger-menu
-$('button.icon.burger').on('pointerdown', function () {
+$('button.icon.burger').on('click', function () {
 	$('nav').toggleClass('open');
 });
 
 /**
- * "Closes" burger-menu when window is resized to more than 720px in width,
+ * "Closes" burger-menu when window is resized to more than 640px in width,
  * and hides initial transition-animation when width is less
  */
 window
-	.matchMedia('only screen and (min-width: 768px)')
+	.matchMedia('only screen and (min-width: 640px)')
 	.addEventListener('change', function (ev) {
 		if (ev.matches) return $('nav').removeClass('open');
 		$('.nav-links').hide();
