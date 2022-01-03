@@ -4,46 +4,87 @@ body {
 }
 
 .animation-container,
-.animation-container canvas {
+.caption-container {
 	position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
+	top: var(--min-header-height);
+	bottom: var(--outer-padding);
+	left: var(--outer-padding);
+	right: var(--outer-padding);
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	opacity: 0;
+	transition: opacity 1s ease-in-out;
 }
 
 .animation-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	z-index: -1;
 	max-height: 100%;
-	max-width: 100%;
+	max-width: var(--max-content-width);
 	margin: 0 auto;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-between;
 }
 
-.animation-container canvas {
-	width: 100%;
-	height: 100%;
+.caption-container {
+	transform: rotate(90deg);
+	z-index: 0;
+	justify-content: center;
+}
+
+.show {
+	opacity: 1;
 }
 
 .animation-caption {
-	transform: rotate(90deg);
 	position: relative;
 	min-width: fit-content;
 	z-index: 1;
 	padding: 0.5em;
 	border-radius: 0.5em;
-	opacity: 0;
 	transition: opacity 0.5s ease-in;
 }
 
-.animation-caption.show {
-	opacity: 1;
+.smiley {
+	display: block;
+	position: relative;
+	height: 25%;
+	width: auto;
+	transform-origin: center;
+	animation: rotateShape 10s linear 0s infinite;
+}
+
+.smiley:nth-of-type(2) {
+	animation-direction: reverse;
+}
+
+@keyframes rotateShape {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
 
 @media (min-width: 600px), (max-height: 600px) {
-	.animation-caption {
+	.caption-container {
+		transform: rotate(0);
+	}
+}
+
+@media (orientation: landscape) {
+	.animation-container {
+		flex-direction: row;
+	}
+
+	.smiley {
+		width: 25%;
+		height: auto;
+	}
+
+	.caption-container {
 		transform: rotate(0);
 	}
 }

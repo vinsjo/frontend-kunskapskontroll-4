@@ -101,11 +101,11 @@ button.icon {
 	font-weight: 900;
 }
 
-@media (min-height: 768px) and (max-width: 768px), (min-width: 768px) {
+/* @media (min-height: 768px) and (max-width: 768px), (min-width: 768px) {
 	.animation-caption {
 		font-size: var(--font-size-h1);
 	}
-}
+} */
 
 @media (min-width: 768px) {
 	:root {
@@ -116,5 +116,19 @@ button.icon {
 	}
 	.project:nth-of-type(odd) .title {
 		text-align: right;
+	}
+}
+
+@media (orientation: portrait) and (min-height: 700px),
+	(orientation: landscape) and (min-width: 640px) {
+	.animation-caption {
+		font-size: var(--font-size-h1);
+	}
+}
+
+@media (orientation: portrait) and (min-height: 1024px),
+	(orientation: landscape) and (min-width: 1024px) {
+	.animation-caption {
+		font-size: var(--font-size-logo);
 	}
 }

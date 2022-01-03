@@ -1,6 +1,6 @@
 :root {
 	--bg-color: white;
-	--bg-color-header: rgba(255, 255, 255, 0.9);
+	--bg-color-header: var(--bg-color);
 	--text-color: #000000;
 	--accent-color: #2327a9;
 	--box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
@@ -90,7 +90,7 @@ a.current {
 
 .swiper-pagination-bullet {
 	background-color: rgba(255, 255, 255, 0.75);
-	box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.25);
+	box-shadow: 0 10px 0 rgba(0, 0, 0, 0.25);
 }
 
 .swiper-pagination-bullet-active {

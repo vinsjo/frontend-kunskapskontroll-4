@@ -1,6 +1,7 @@
 :root {
 	--outer-padding: 1rem;
 	--max-content-width: 1024px;
+	--min-header-height: 4rem;
 }
 
 * {
@@ -35,6 +36,8 @@ section {
 header {
 	width: 100%;
 	max-width: var(--max-content-width);
+	min-height: var(--min-header-height);
+	/* max-height: var(--max-header-height); */
 	margin-top: calc(var(--outer-padding) * -1);
 	padding-top: var(--outer-padding);
 	display: flex;
