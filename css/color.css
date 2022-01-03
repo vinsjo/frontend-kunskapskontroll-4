@@ -92,10 +92,6 @@ a.current {
 	background-color: rgba(255, 255, 255, 0.75);
 }
 
-.swiper-caption {
-	color: white;
-}
-
 .swiper-pagination-bullet-active {
 	background-color: var(--accent-color);
 }
